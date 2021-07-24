@@ -1,4 +1,4 @@
-
+from django.shortcuts import render
 from .models import Category, RandomList
 from .serializers import CategorySerializer, RandomListSerializer
 
@@ -6,6 +6,13 @@ from .serializers import CategorySerializer, RandomListSerializer
 # DRF
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
+
+def index(request):
+    return render(request, "index.html")
+
+
+def index_js(request):
+    return render(request, "index_js.html")
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
